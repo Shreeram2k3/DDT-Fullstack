@@ -41,8 +41,6 @@ font: size 16px;
   margin: 0 20px;
 }
 .navigation a:hover{
-  padding : 0px;
-  /* color: #0984e2; */
   background-color: #0984e2;
   color: #fff;
   padding: 10px ;
@@ -129,8 +127,8 @@ font: size 16px;
 
 .s2 .contact
 {
-  width: 420px;
-  padding: 30px 30px;
+  width: 400px;
+  padding: 30px 100px;
 }
 
 .s2 .contact h3
@@ -200,6 +198,7 @@ font: size 16px;
   padding-bottom: 5px;
   width: 300px;
   
+  
 }
 
 .s2 .box2 #msg,#mail
@@ -227,6 +226,7 @@ font: size 16px;
   background-color: #0984e2;
   color: #fff;
   border: none;
+  outline: none;
 }
 
 footer
