@@ -6,10 +6,20 @@
   <title>btn</title>
 </head>
 <body>
-  <button id="btn">Click Me</button>
+  <button onclick="clickme()" >Click Me</button>
+  <button id="btn2">button 2 </button>
 
   <script>
-    var
+    function clickme()
+    {
+      console.log("Buttton Clicked");
+    }
+
+    var btn = document.getElementById("btn2");
+    btn.addEventListener="click", function()
+    {
+      console.log("clicked btn2");
+    }
   </script>
 </body>
 </html>
