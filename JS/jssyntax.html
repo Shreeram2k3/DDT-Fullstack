@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="h1">Hello</h1>
+  <h2 id="h2"></h2>
+  <p id="h3">Sum is</p>
+  
+  <script>
+    let a=5, b=6, c=7,d;
+
+    if(a>b&&a>c)
+  {
+    console.log("greatest is",a);
+    d=a;
+  }
+
+  else if(b>a&&b>c)
+  {
+    console.log("greatest is",b);
+    d=b;
+  }
+
+  else
+  {
+    console.log("greatest is",c);
+    d=c;
+  }
+
+  var n1=4,n2=4;
+  var sum = n1+n2;
+
+  var h1= document.getElementById("h1")
+  h1.style.color="red"
+
+  
+  var h2 = document.getElementById("h2")
+  h2.style.color="Green"
+  h2.innerHTML=`Greatest is ${d}`
+
+  var h3 = document.getElementById("h3")
+  h3.style.color="violet"
+  h3.innerHTML=`Sum is ${sum} `
+
+
+ 
+
+  
+  </script>
+</body>
+</html>
