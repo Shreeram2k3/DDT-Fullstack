@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+  <div class="box">
+    <h2>calculator</h2>
+
+    <div class="inputbox">
+      <input type="number" placeholder="num1" id="num1">
+      <input type="number" placeholder="num2" id="num2">
+    </div>
+    
+    <div class="btns">
+      <button id="addbtn">+</button>
+      <button id="subbtn">-</button>
+      <button id="mulbtn">*</button>
+      <button id="divbtn">/</button>
+    </div>
+
+    <h3 id="h3"></h3>
+
+    <script>
+    
+      var btn = document.getElementById("addbtn");
+  
+      btn.addEventListener("click",function()
+      {
+        console.log("+ button clicked")
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var res = num1+num2;
+        console.log(res);
+  
+        var h3 = document.getElementById("h3")
+        h3.style.color="green"
+        h3.innerHTML=`${num1} + ${num2} = ${res} `
+  
+  
+      })
+  
+      var btn = document.getElementById("subbtn");
+  
+      btn.addEventListener("click",function()
+      {
+        console.log(" - button clicked")
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var res = num1-num2;
+        console.log(res);
+  
+        var h3 = document.getElementById("h3")
+        h3.style.color="green"
+        h3.innerHTML=`${num1} - ${num2} = ${res} `
+  
+      })
+
+      var btn = document.getElementById("mulbtn");
+  
+      btn.addEventListener("click",function()
+      {
+        console.log(" * button clicked")
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var res = num1*num2;
+        console.log(res);
+  
+        var h3 = document.getElementById("h3")
+        h3.style.color="green"
+        h3.innerHTML=`${num1}* ${num2} = ${res} `
+  
+      })
+
+      var btn = document.getElementById("divbtn");
+  
+      btn.addEventListener("click",function()
+      {
+        console.log(" / button clicked")
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var res = num1/num2;
+        console.log(res);
+  
+        var h3 = document.getElementById("h3")
+        h3.style.color="green"
+        h3.innerHTML=`${num1} / ${num2} = ${res} `
+  
+  
+      })
+
+      
+
+      
+    </script>
+
+  </div>
+</body>
+</html>
