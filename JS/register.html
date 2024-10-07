@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+    <link rel="stylesheet" href="register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="body">
+    <div class="wrapper">
+        <form action="" id="register-form">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required id="username">
+                
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+              <input type="text" placeholder="Firstname" required id="firstname">              
+          </div>
+
+          <div class="input-box">
+            <input type="text" placeholder="Lastname" required id="lastname">
+
+        </div>
+
+        <div class="input-box">
+          <input  type="email" placeholder="Email id"  required id="email">
+        </div>
+
+        <div class="input-box">
+            <input type="text" placeholder="Password" required id="password">
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="text" placeholder="Confirm Password" required id="cpass">
+        </div>
+            <button type="submit" class="btn">Signup</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("register-form");
+        form.addEventListener("submit", function(ev){
+        ev.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const firstname = document.getElementById("firstname").value;
+        const lastname= document.getElementById("lastname").value;
+        const email = document.getElementById("email").value;
+        const pass = document.getElementById("password").value;
+        const cpass = document.getElementById("cpass").value;
+
+        const userdetails =
+        {
+            username : username,
+             firstname : firstname, 
+             lastname : lastname , 
+             Emailid:email,
+              password:pass,
+              Confirmpassword:cpass};
+
+            localStorage.setItem("user",JSON.stringify(userdetails));
+
+            alert("Form submitted");
+        
+        
+        
+
+
+        })
+    </script>
+
+</body>
+</html>

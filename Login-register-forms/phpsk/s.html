@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Sidebar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(to bottom, #4a90e2, #9013fe);
+            color: white;
+            position: fixed;
+            transition: width 0.3s;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar .logo {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            transition: background 0.3s;
+            border-radius: 5px;
+        }
+
+        .sidebar nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar nav ul li a .fas {
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .sidebar nav ul li a:hover .fas {
+            transform: scale(1.2);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <h2>Your Logo</h2>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#home" class="sidebar-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#about" class="sidebar-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#services" class="sidebar-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="sidebar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <p>&copy; 2024 Your Company</p>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sample</title>
+</head>
+<body>
+  <h1 id="head"> hello</h1>
+
+  <div id="box"></div>
+
+  <script>
+
+    /*  selecting the specific element by id 
+    and creating an object for it */
+    var head = document.getElementById("head");
+
+    /* textcontent gives the content inside the specific tag
+    += is used to cancatenate the content as a string */
+    head.textContent += ",World!";
+
+
+    var title = document.getElementById("box");
+    /* by using innerHTML we can directly add the elements 
+    within the selected tag */
+    title.innerHTML = "<button >Click ME</button>"
+    console.log(title.textContent);
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-do</title>
+  <style>
+    * {
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      height: 100vh;
+    }
+
+    .wrapper {
+      margin-top: 10%;
+      width: 300px;
+      background: #fff;
+      border: 2px solid rgba(255, 255, 255, .2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+      color: #fff;
+      border-radius: 10px;
+      padding: 30px 65px;
+      color: black;
+    }
+
+    .tasks ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .tasks ul li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <form action="" id="form">
+      <h2>TO DO</h2>
+      <input type="text" id="taskinp" placeholder="Enter a task">
+      <button id="addbtn">Add</button>
+    </form>
+
+    <div class="tasks">
+      <ul id="taskList">
+        
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("form");
+    const taskInput = document.getElementById("taskinp");
+    const taskList = document.getElementById("taskList");
+
+    
+    document.addEventListener("DOMContentLoaded", loadTasks);
+
+    form.addEventListener("submit", function(ev) {
+      ev.preventDefault();
+      const task = taskInput.value.trim();
+      if (task !== "") {
+        
+        addTaskToList(task); 
+        saveTask(task); 
+        taskInput.value = "";
+      }
+    });
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      for (let i = 0; i < tasks.length; i++) {
+        addTaskToList(tasks[i]);
+      }
+    }
+
+    function saveTask(task) {
+      let tasks = localStorage.getItem("tasks");
+      if (tasks === null) {
+        tasks = [task];
+      } else {
+        tasks = JSON.parse(tasks);
+        tasks.push(task);
+      }
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function addTaskToList(task) {
+      const li = document.createElement("li");
+      li.textContent = task;
+      taskList.appendChild(li);
+    }
+  </script>
+</body>
+</html>

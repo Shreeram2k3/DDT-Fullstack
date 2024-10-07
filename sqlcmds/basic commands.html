@@ -1,0 +1,11 @@
+<!-- used to count no of customers in a particualar country -->
+select country, count(*) as no_of_customers from Customers GROUP BY country;
+
+
+<!-- used to select a table orders & grouping customers
+if the product bought by customer is >400 
+sum the total order by customer and display
+ it with customer id like total order by this customer is this -->
+ 
+select customer_id,sum(amount) from orders GROUP BY customer_id
+ HAVING sum(amount)>400 ;

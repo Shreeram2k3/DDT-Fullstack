@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SR</title>
+  <link rel="shortcut icon" href="sr-logo.png" type="image.jpg">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body >
+  <nav>
+    
+    <a  href="/.">
+      <img src="sr-logo.png">
+      <span> Shreeram</span>
+    </a>
+
+    <button  onclick="toggleNavbar()" id="menubtn">Menu</button>
+  
+    <ul  id="nav-links" type="square">
+      <li>
+        <a href="./" class="active">Home</a>
+      </li>
+      <li>
+        <a href="Contact.html">Contact</a>
+      </li>
+      <li>
+        <a href="Service.html ">Service</a>
+      </li>
+      <li>
+        <a href="Address.html">Address</a>
+      </li>
+      <li>
+        <a href="About.html">About</a>
+      </li>
+      
+    </ul>
+
+  </nav>
+  <!-- <h1>Hello, This is Shreeram!</h1> -->
+
+  <script>
+    function toggleNavbar()
+    {
+      var navbar = document.getElementById("nav-links")
+
+      if (navbar.classList.contains("active"))
+      {
+        navbar.classList.remove("active");
+      }
+      else
+      {
+        navbar.classList.add("active");
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>

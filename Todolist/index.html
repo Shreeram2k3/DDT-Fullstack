@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-do</title>
+  <style>
+    * {
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      }
+
+      .wrapper
+      {
+        margin-top:10% ;
+        width: 300px;
+        background:#fff;
+        border: 2px solid rgba(255, 255, 255, .2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        color: #fff;
+        border-radius: 10px;
+        padding: 30px 65px;
+        color:black;
+        /* background-color: aqua; */
+      }
+
+
+      .wrapper .tasks
+      {
+        margin-top: 20px;
+        
+      }
+      /* .wrapper .tasks 
+      {
+        list-style: none;
+      } */
+      
+      .wrapper .tasks p{
+        margin-top: 10px;
+        /* margin-bottom: 10px; */
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <form action="" id="form">
+      <h2>TO DO</h2>
+      <input type="text" id="taskinp">
+      <button id="addbtn"> add</button>
+    </form>
+
+    <div id="tasks">
+      <!-- <ul >
+        
+      </ul> -->
+    </div>
+  
+  </div>
+
+
+  <script>
+    
+    
+        let addbtn = document.getElementById("addbtn");
+        let taskinp = document.getElementById("taskinp");
+        let tasks = document.getElementById("tasks");
+
+        let taskarr = [];
+          addbtn.addEventListener('click', function(ev){
+          ev.preventDefault();
+          taskarr.push(taskinp.value);
+          addtask(taskinp.value);
+          taskinp.value=" ";
+        })
+
+        localStorage.clear();
+        function addtask(taskarr)
+        {
+          let para = document.createElement('p')
+          para.innerText = taskarr;
+          tasks.appendChild(para)
+          localStorage.setItem('Task',JSON.stringify(taskarr))
+          // para.addEventListener
+
+        }
+
+
+
+        
+
+
+  </script>
+</body>
+</html>
